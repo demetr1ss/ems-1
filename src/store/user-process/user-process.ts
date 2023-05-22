@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import {AuthorizationStatus, NameSpace} from 'const';
 import {dropToken, saveToken} from '../../services/token';
 
@@ -14,7 +14,7 @@ export const userProcess = createSlice({
   name: NameSpace.UserProcess,
   initialState,
   reducers: {
-    logIn: (state, action: PayloadAction<boolean>) => {
+    logIn: (state, action) => {
       saveToken(action.payload);
       state.authorizationStatus = AuthorizationStatus.Auth;
     },

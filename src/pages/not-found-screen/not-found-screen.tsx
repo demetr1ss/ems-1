@@ -1,5 +1,5 @@
 import {Link, useLocation} from 'react-router-dom';
-import Header from '../../components/header';
+import Header from '../../components/header/header';
 import {AppRoute, ToastType} from 'const';
 import {showNotify} from 'utils';
 
