@@ -5,10 +5,10 @@ import {showNotify} from 'utils';
 
 type PropsType = {
   setIsConfirmModalOpened: (arg: boolean) => void;
-}
+};
 
 export default function RegistrationForm({setIsConfirmModalOpened}: PropsType) {
-  type UserDataType = {
+  type FormDataType = {
     username: string;
     email: string;
     password: string;
@@ -20,11 +20,11 @@ export default function RegistrationForm({setIsConfirmModalOpened}: PropsType) {
     watch,
     handleSubmit,
     formState: {errors},
-  } = useForm<UserDataType>({
+  } = useForm<FormDataType>({
     mode: 'all',
   });
 
-  const onSubmit = (data: UserDataType) => {
+  const onSubmit = (data: FormDataType) => {
     const emails = users.map((user) => user.email);
 
     if (emails.includes(data.email)) {

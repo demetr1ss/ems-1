@@ -4,6 +4,7 @@ import {dropToken, saveToken} from '../../services/token';
 
 export type UserProcessType = {
   authorizationStatus: AuthorizationStatus;
+  userName?: string;
 };
 
 const initialState: UserProcessType = {
@@ -16,10 +17,12 @@ export const userProcess = createSlice({
   reducers: {
     logIn: (state, action) => {
       saveToken(action.payload);
+      state.userName = action.payload;
       state.authorizationStatus = AuthorizationStatus.Auth;
     },
     logOut: (state) => {
       dropToken();
+      state.userName = undefined;
       state.authorizationStatus = AuthorizationStatus.NoAuth;
     },
   },
