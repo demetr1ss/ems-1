@@ -8,7 +8,11 @@ export default function ProfileScreen() {
   return (
     <>
       <Header userName={userName} />
-      <main>Экран приветствия</main>
+      <main className='text-center'>
+        <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mt-20'>
+          Здравствуйте, {userName}
+        </h1>
+      </main>
     </>
   );
 }
