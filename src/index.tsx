@@ -7,6 +7,7 @@ import {getToken} from 'services/token';
 import {logIn} from 'store/user-process/user-process';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
